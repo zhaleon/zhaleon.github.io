@@ -1,0 +1,22 @@
+/* /assets/site.css or inside your layout's <style> */
+/* .post-title{ text-align:center; margin:0 0 .5rem; } */
+/* hr.post-rule{ border:0; border-top:1px solid #ddd; margin:.5rem auto 1.25rem; width:100%; } */
+
+:root { --rule-color: #ddd; }              /* same gray as your header line */
+
+.post-title{
+  text-align:center;
+  /* margin:0 0 .75rem; */
+  margin:0 0 0;
+}
+
+hr.post-rule{
+  border:0;
+  border-top:1px solid var(--rule-color);  /* matches header line */
+  width:100%;
+  margin:.5rem auto 1.25rem;
+}
+
+/* keep header border in sync */
+header{ border-bottom:1px solid var(--rule-color); }
+
