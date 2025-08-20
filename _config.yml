@@ -1,0 +1,8 @@
+title: zhaleon
+url: https://zhaleon.github.io
+baseurl: ""
+permalink: /blog/:slug/
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+

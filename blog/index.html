@@ -1,0 +1,42 @@
+---
+layout: default
+title: Blog
+permalink: /blog/
+---
+<style>
+  table.postlist{width:100%;border-collapse:collapse}
+  .postlist th,.postlist td{padding:8px 6px;border-bottom:1px solid #eee;text-align:left}
+  .postlist th{font-weight:600;font-size:.875rem;color:#444}
+  .postlist td:first-child{white-space:nowrap}
+</style>
+
+<h1>Blog</h1>
+<table class="postlist" aria-describedby="blog-list">
+  <thead>
+    <tr>
+      <th scope="col">Date</th>
+      <th scope="col">Post</th>
+      <th scope="col">Tags</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for post in site.posts %}
+    <tr>
+      <td>
+        <time datetime="{{ post.date | date_to_xmlschema }}">
+          {{ post.date | date: "%Y-%m-%d" }}
+        </time>
+      </td>
+      <td><a href="{{ post.url | relative_url }}">{{ post.title }}</a></td>
+      <td>
+        {% if post.tags and post.tags.size > 0 %}
+          {{ post.tags | sort | uniq | join: ", " }}
+        {% else %}
+          —
+        {% endif %}
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
